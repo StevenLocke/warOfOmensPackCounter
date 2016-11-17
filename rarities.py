@@ -1,7 +1,13 @@
 from __future__ import division
 
 import re
+import sys
+
 import python_util
+
+if sys.version_info[0] == 2:
+        input = raw_input
+
 
 with open("rarities.txt", "rb") as r:
 	pat = re.compile(b"\w+: (\d+)\r?\n")
