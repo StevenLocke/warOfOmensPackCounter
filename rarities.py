@@ -3,9 +3,8 @@ from __future__ import division
 import re
 import python_util
 
-
 with open("rarities.txt", "rb") as r:
-	pat = re.compile(b"\w+: (\d+)\n")
+	pat = re.compile(b"\w+: (\d+)\r?\n")
 
 	line = r.readline()
 	commons = int(pat.match(line).group(1))
