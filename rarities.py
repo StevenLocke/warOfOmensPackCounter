@@ -54,7 +54,6 @@ Quit = ["q", "Q"]
 
 while True:
 	command = input("Command: ")
-	total += 1
 	if command in Common:
 		commons += 1
 	elif command in Uncommon:
@@ -69,9 +68,9 @@ while True:
 		exit(0)
 	else:
 		print("Invalid Command.")
-		total -= 1
-		if total < 1:
-			total = 1
+		continue
+	
+	total += 1
 	
 	with open("rarities.txt", 'wb'): pass
 
