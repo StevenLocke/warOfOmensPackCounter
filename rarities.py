@@ -1,4 +1,8 @@
+from __future__ import division
+
 import re
+import python_util
+
 
 with open("rarities.txt", "rb") as r:
 	pat = re.compile(b"\w+: (\d+)\n")
@@ -23,10 +27,16 @@ with open("rarities.txt", "rb") as r:
 
 
 if total > 0:
-	print("Commons, Uncommons, Scarces, Rares, Epics, Total:")
-	print(commons, uncommons, scarces, rares, epics, total)
-	print("{0:.2f}%, {1:.2f}%, {2:.2f}%, {3:.2f}%, {4:.2f}%, {5:.2f}%".format(\
-		commons/total*100, uncommons/total*100, scarces/total*100, rares/total*100, epics/total*100, 100))
+        printer = python_util.ColumnPrinter()
+        printer.append(('Commons', 'Uncommons', 'Scarces', 'Rares', 'Epics', 'Total'))
+        printer.append((commons, uncommons, scarces, rares, epics, total))
+        printer.append(('{0:.2f}%'.format(commons/total*100),
+                        '{0:.2f}%'.format(uncommons/total*100),
+                        '{0:.2f}%'.format(scarces/total*100),
+                        '{0:.2f}%'.format(rares/total*100),
+                        '{0:.2f}%'.format(epics/total*100),
+                        '-'))
+        printer.output()
 else:
 	print("No packs opened.")
 	
