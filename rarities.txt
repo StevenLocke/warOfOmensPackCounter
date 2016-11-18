@@ -1,6 +1,6 @@
-Commons: 239
-Uncommons: 72
+Commons: 246
+Uncommons: 75
 Scarces: 10
 Rares: 3
 Epics: 0
-Total: 324
+Total: 334
