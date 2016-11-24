@@ -10,7 +10,7 @@ if sys.version_info[0] == 2:
 
 
 with open("rarities.txt", "rb") as r:
-    pat = re.compile(r"\w+: (\d+)\r?\n")
+    pat = re.compile(b"\w+: (\d+)\r?\n")
 
     line = r.readline()
     commons = int(pat.match(line).group(1))
