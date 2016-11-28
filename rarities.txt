@@ -1,6 +1,6 @@
-Commons: 649
-Uncommons: 189
-Scarces: 31
+Commons: 686
+Uncommons: 204
+Scarces: 34
 Rares: 7
 Epics: 1
-Total: 877
+Total: 932
