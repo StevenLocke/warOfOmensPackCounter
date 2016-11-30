@@ -8,28 +8,29 @@ import python_util
 if sys.version_info[0] == 2:
     input = raw_input
 
+try:
+    with open("rarities.txt", "rb") as r:
+        pat = re.compile(b"\w+: (\d+)\r?\n")
 
-with open("rarities.txt", "rb") as r:
-    pat = re.compile(b"\w+: (\d+)\r?\n")
+        line = r.readline()
+        commons = int(pat.match(line).group(1))
 
-    line = r.readline()
-    commons = int(pat.match(line).group(1))
+        line = r.readline()
+        uncommons = int(pat.match(line).group(1))
 
-    line = r.readline()
-    uncommons = int(pat.match(line).group(1))
+        line = r.readline()
+        scarces = int(pat.match(line).group(1))
 
-    line = r.readline()
-    scarces = int(pat.match(line).group(1))
+        line = r.readline()
+        rares = int(pat.match(line).group(1))
 
-    line = r.readline()
-    rares = int(pat.match(line).group(1))
+        line = r.readline()
+        epics = int(pat.match(line).group(1))
 
-    line = r.readline()
-    epics = int(pat.match(line).group(1))
-
-    line = r.readline()
-    total = int(pat.match(line).group(1))
-
+        line = r.readline()
+        total = int(pat.match(line).group(1))
+except FileNotFoundError:
+    commons = uncommons = scarces = rares = epics = total = 0
 
 printer = python_util.ColumnPrinter()
 if total > 0:
