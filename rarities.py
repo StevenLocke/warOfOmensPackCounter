@@ -50,7 +50,7 @@ else:
 
 Common = ["c", "C"]
 Uncommon = ["u", "U"]
-Scare = ["s", "S"]
+Scarce = ["s", "S"]
 Rare = ["r", "R"]
 Epic = ["e", "E"]
 Quit = ["q", "Q"]
@@ -61,7 +61,7 @@ while True:
         commons += 1
     elif command in Uncommon:
         uncommons += 1
-    elif command in Scare:
+    elif command in Scarce:
         scarces += 1
     elif command in Rare:
         rares += 1
